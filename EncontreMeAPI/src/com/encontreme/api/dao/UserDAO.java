@@ -1,13 +1,13 @@
-package com.encontreme.dao;
+package com.encontreme.api.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.encontreme.model.User;
-import com.encontreme.type.Gender;
-import com.encontreme.utility.*;
+import com.encontreme.api.model.User;
+import com.encontreme.api.type.Gender;
+import com.encontreme.api.utility.*;
 
 import java.sql.Connection;
 

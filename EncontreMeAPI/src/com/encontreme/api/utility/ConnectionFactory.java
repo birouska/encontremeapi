@@ -1,4 +1,4 @@
-package com.encontreme.utility;
+package com.encontreme.api.utility;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -19,7 +19,7 @@ public class ConnectionFactory {
 		
 		String ServerName = getServerName();
 		
-		//ServerName = "laranjinha";
+		ServerName = "laranjinha";
 		
 		System.out.println("Server Name: " + ServerName);
 		
@@ -33,9 +33,9 @@ public class ConnectionFactory {
 		}
 		else
 		{
-			user = "zskfcwuqrlzkwd";
-			pass = "mHROQR8aF5Jn9J04PfZvH7PxMf";
-			dataBase = "jdbc:postgresql://ec2-50-16-229-45.compute-1.amazonaws.com:5432/d6sbusdb98gbe7?sslmode=require";
+			user = "dewkrxxhiwahsb";
+			pass = "1FnP3kGMUTrRmWYYHbuBLpgT7e";
+			dataBase = "jdbc:postgresql://ec2-23-21-193-140.compute-1.amazonaws.com:5432/d8k73lim09eq0c?sslmode=require";
 			
 			//String url = "jdbc:postgresql://ec2-107-20-214-225.compute-1.amazonaws.com:5432/databasename?user=someusername&password=somepassword&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 			

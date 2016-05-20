@@ -1,4 +1,4 @@
-package com.encontreme.api;
+package com.encontreme.api.resource;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -19,12 +19,13 @@ import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import com.encontreme.control.UserControl;
-import com.encontreme.model.User;
+import com.encontreme.api.control.GPSLocationControl;
+import com.encontreme.api.model.GPSLocation;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
-@Path("/users")
-public class UsersResource {
+@Path("/locations")
+public class GPSLocationResource {
 
 	// Allows to insert contextual objects into the class,
 	// e.g. ServletContext, Request, Response, UriInfo
@@ -34,7 +35,7 @@ public class UsersResource {
 	Request request;
 	
 	
-	@Path("/users")
+	@Path("/locations")
 	@OPTIONS
 	@Produces("application/json")
 	public Response greetingOPT() {
@@ -66,12 +67,14 @@ public class UsersResource {
 		}
 		
 		Gson gson = new Gson();
-		User user = new User();
+		gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSz").create();
 		
-		user = gson.fromJson(crunchifyBuilder.toString(), User.class);
+		GPSLocation gpsLocation = new GPSLocation();
 		
-		UserControl userControl = new UserControl();
-		userControl.Create(user);
+		gpsLocation = gson.fromJson(crunchifyBuilder.toString(), GPSLocation.class);
+		
+		GPSLocationControl gpsLocationControl = new GPSLocationControl();
+		gpsLocationControl.Create(gpsLocation);
 		
 		System.out.println("Data Received: " + crunchifyBuilder.toString());
  
@@ -111,30 +114,26 @@ public class UsersResource {
 		return retVal;
 	}
 
-	@Path("{user}")
+	@Path("{id_user}")
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getUser(@PathParam("user") String id) {
+	public Response getUser(@PathParam("id_user") String id_user) {
 
-		String strUsers = new String();
+		String strLocations = new String();
 
 		try {
 
-			int ID = tryParse(id);
-			UserControl userControl = new UserControl();
-
-			User user = new User();
-			user = userControl.List(ID);
+			int ID_user = tryParse(id_user);
 
 			Gson gson = new Gson();
-			strUsers = gson.toJson(user);
+			strLocations = gson.toJson(getGPSLocation(ID_user));
 
 		} catch (Exception e) {
 			System.out.println("Error Parsing: - ");
 		}
 
 		// return HTTP response 200 in case of success
-		return Response.status(200).entity(strUsers).build();
+		return Response.status(200).entity(strLocations).build();
 	}
 
 	@GET
@@ -142,20 +141,28 @@ public class UsersResource {
 	public Response getUsers(InputStream incomingData) {
 		String strUsers = new String();
 		try {
-
-			UserControl userControl = new UserControl();
-
-			List<User> lstUser = new ArrayList<User>();
-			lstUser = userControl.List();
-
+			
 			Gson gson = new Gson();
-			strUsers = gson.toJson(lstUser);
-
+			strUsers = gson.toJson(getGPSLocation(0));
+			
 		} catch (Exception e) {
 			System.out.println("Error Parsing: - ");
 		}
 
 		// return HTTP response 200 in case of success
 		return Response.status(200).entity(strUsers).build();
+	}
+	
+	private List<GPSLocation> getGPSLocation(int id){
+		List<GPSLocation> lstGPSLocation = new ArrayList<GPSLocation>();
+		
+		GPSLocationControl gpsLocControl = new GPSLocationControl();
+
+		if(id==0)
+			lstGPSLocation = gpsLocControl.List();
+		else
+			lstGPSLocation = gpsLocControl.List(id);
+		
+		return lstGPSLocation;
 	}
 }

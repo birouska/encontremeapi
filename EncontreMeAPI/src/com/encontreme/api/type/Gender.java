@@ -1,4 +1,4 @@
-package com.encontreme.type;
+package com.encontreme.api.type;
 
 public enum Gender {
 	Feminino,

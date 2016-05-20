@@ -1,4 +1,4 @@
-package com.encontreme.api;
+package com.encontreme.api.resource;
 
 
 import java.io.*;

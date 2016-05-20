@@ -1,9 +1,9 @@
-package com.encontreme.control;
+package com.encontreme.api.control;
 
 import java.util.List;
 
-import com.encontreme.dao.UserDAO;
-import com.encontreme.model.User;
+import com.encontreme.api.dao.UserDAO;
+import com.encontreme.api.model.User;
 
 public class UserControl {
 	

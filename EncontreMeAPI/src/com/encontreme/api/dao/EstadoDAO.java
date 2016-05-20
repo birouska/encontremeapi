@@ -1,12 +1,12 @@
-package com.encontreme.dao;
+package com.encontreme.api.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.encontreme.model.Estado;
-import com.encontreme.utility.*;
+import com.encontreme.api.model.Estado;
+import com.encontreme.api.utility.*;
 
 import java.sql.Connection;
 

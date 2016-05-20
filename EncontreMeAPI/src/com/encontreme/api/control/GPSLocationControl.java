@@ -1,9 +1,9 @@
-package com.encontreme.control;
+package com.encontreme.api.control;
 
 import java.util.List;
 
-import com.encontreme.dao.GPSLocationDAO;
-import com.encontreme.model.GPSLocation;
+import com.encontreme.api.dao.GPSLocationDAO;
+import com.encontreme.api.model.GPSLocation;
 
 public class GPSLocationControl {
 	

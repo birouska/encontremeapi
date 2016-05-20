@@ -1,4 +1,4 @@
-package com.encontreme.dao;
+package com.encontreme.api.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.encontreme.model.GPSLocation;
-import com.encontreme.utility.ConnectionFactory;
+import com.encontreme.api.model.GPSLocation;
+import com.encontreme.api.utility.ConnectionFactory;
 
 public class GPSLocationDAO {
 

@@ -1,6 +1,6 @@
-package com.encontreme.model;
+package com.encontreme.api.model;
 
-import com.encontreme.type.Gender;
+import com.encontreme.api.type.Gender;
 
 public class User {
 

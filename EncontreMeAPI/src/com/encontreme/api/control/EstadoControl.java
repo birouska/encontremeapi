@@ -1,9 +1,9 @@
-package com.encontreme.control;
+package com.encontreme.api.control;
 
 import java.util.List;
 
-import com.encontreme.dao.EstadoDAO;
-import com.encontreme.model.Estado;
+import com.encontreme.api.dao.EstadoDAO;
+import com.encontreme.api.model.Estado;
 
 public class EstadoControl {
 
