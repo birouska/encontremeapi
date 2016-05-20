@@ -17,7 +17,7 @@
         <param-value>com.mysql.jdbc.Driver</param-value>
         </init-param>
       </servlet>
-   <servlet-mapping>
+   <servlet-mapping> 
    <servlet-name>Jersey RESTful Application</servlet-name>
       <url-pattern>/v1/*</url-pattern>
    </servlet-mapping>  
