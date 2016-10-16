@@ -1,9 +1,9 @@
-package com.encontreme.control;
+package com.birouska.encontreme.control;
 
 import java.util.List;
 
-import com.encontreme.dao.EstadoDAO;
-import com.encontreme.model.Estado;
+import com.birouska.encontreme.dao.EstadoDAO;
+import com.birouska.encontreme.model.Estado;
 
 public class EstadoControl {
 

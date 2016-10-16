@@ -1,12 +1,12 @@
-package com.encontreme.dao;
+package com.birouska.encontreme.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.encontreme.model.Estado;
-import com.encontreme.utility.*;
+import com.birouska.encontreme.model.Estado;
+import com.birouska.encontreme.utility.*;
 
 import java.sql.Connection;
 

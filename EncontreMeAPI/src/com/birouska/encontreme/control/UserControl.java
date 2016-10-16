@@ -1,9 +1,9 @@
-package com.encontreme.control;
+package com.birouska.encontreme.control;
 
 import java.util.List;
 
-import com.encontreme.dao.UserDAO;
-import com.encontreme.model.User;
+import com.birouska.encontreme.dao.UserDAO;
+import com.birouska.encontreme.model.User;
 
 public class UserControl {
 	

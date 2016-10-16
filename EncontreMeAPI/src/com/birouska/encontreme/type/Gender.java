@@ -1,4 +1,4 @@
-package com.encontreme.type;
+package com.birouska.encontreme.type;
 
 public enum Gender {
 	Feminino,

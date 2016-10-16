@@ -1,4 +1,4 @@
-package com.encontreme.api;
+package com.birouska.encontreme.api;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -19,8 +19,8 @@ import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import com.encontreme.control.UserControl;
-import com.encontreme.model.User;
+import com.birouska.encontreme.control.UserControl;
+import com.birouska.encontreme.model.User;
 import com.google.gson.Gson;
 
 @Path("/users")

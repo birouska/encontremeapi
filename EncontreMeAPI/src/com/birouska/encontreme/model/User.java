@@ -1,15 +1,16 @@
-package com.encontreme.model;
+package com.birouska.encontreme.model;
 
-import com.encontreme.type.Gender;
+import com.birouska.encontreme.type.Gender;
+import java.sql.Timestamp;
 
 public class User {
 
 	private long Id;
-	private String firstName;
-	private String lastName;
+	private String userName;
 	private String emailAdress;
 	private Gender gender;
 	private String password;
+	private Timestamp dtcreated;
 
 	public long getId() {
 		return Id;
@@ -19,20 +20,12 @@ public class User {
 		Id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmailAdress() {
@@ -58,5 +51,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Timestamp getDtCreate() {
+		return dtcreated;
+	}
+
+	public void setDtCreate(Timestamp dtcreated) {
+		this.dtcreated = dtcreated;
+	}
+	
+	
 
 }

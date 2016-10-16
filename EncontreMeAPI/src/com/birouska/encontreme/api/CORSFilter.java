@@ -1,4 +1,4 @@
-package com.encontreme.api;
+package com.birouska.encontreme.api;
 
 
 import java.io.*;

@@ -1,4 +1,4 @@
-package com.encontreme.model;
+package com.birouska.encontreme.model;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;

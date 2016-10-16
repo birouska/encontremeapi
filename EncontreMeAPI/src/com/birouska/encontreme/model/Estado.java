@@ -1,4 +1,4 @@
-package com.encontreme.model;
+package com.birouska.encontreme.model;
 
 public class Estado {
 

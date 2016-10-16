@@ -1,15 +1,15 @@
-package com.encontreme.dao;
+package com.birouska.encontreme.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.encontreme.model.User;
-import com.encontreme.type.Gender;
-import com.encontreme.utility.*;
-
-import java.sql.Connection;
+import com.birouska.encontreme.model.User;
+import com.birouska.encontreme.type.Gender;
+import com.birouska.encontreme.utility.ConnectionFactory;
 
 public class UserDAO {
 
@@ -66,11 +66,11 @@ public class UserDAO {
 
 				// Recupera o id do banco e atribui ele ao objeto
 				user.setId(rset.getLong("id"));
-				user.setFirstName(rset.getString("firstName"));
-				user.setLastName(rset.getString("lastName"));
+				user.setUserName(rset.getString("username"));
 				user.setEmailAdress(rset.getString("emailAdress"));
 				user.setGender((rset.getBoolean("gender") ? Gender.Masculino : Gender.Feminino));
 				user.setPassword(rset.getString("password"));
+				user.setDtCreate(rset.getTimestamp("dtcreated"));
 
 				// Adiciono o contato recuperado, a lista de contatos
 				users.add(user);
@@ -114,18 +114,18 @@ public class UserDAO {
 		try {
 			conn = ConnectionFactory.getConnection();
 			
-			String sql = "INSERT INTO tb_user(firstname, lastname, emailadress, gender, password) VALUES ( ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO tb_user(firstname, lastname, emailadress, gender, password, dtcreated) VALUES ( ?, ?, ?, ?, ?, ?)";
 			
 			pstm = conn.prepareStatement(sql);
 			
-			pstm.setString(1, user.getFirstName());
-			pstm.setString(2, user.getLastName());
-			pstm.setString(3, user.getEmailAdress());
-			pstm.setBoolean(4, Boolean.parseBoolean(String.valueOf(user.getGender().ordinal())));
-			pstm.setString(5, user.getPassword());
+			pstm.setString(1, user.getUserName());
+			pstm.setString(2, user.getEmailAdress());
+			pstm.setBoolean(3, Boolean.parseBoolean(String.valueOf(user.getGender().ordinal())));
+			pstm.setString(4, user.getPassword());
 			
-			//pstm.setTimestamp(4, getCurrentTimeStamp());
-
+			java.util.Date date = new java.util.Date();
+			pstm.setTimestamp(5, new Timestamp(date.getTime()));
+			
 			pstm.executeUpdate();
 					
 		} catch (Exception e) {

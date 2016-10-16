@@ -1,9 +1,9 @@
-package com.encontreme.control;
+package com.birouska.encontreme.control;
 
 import java.util.List;
 
-import com.encontreme.dao.GPSLocationDAO;
-import com.encontreme.model.GPSLocation;
+import com.birouska.encontreme.dao.GPSLocationDAO;
+import com.birouska.encontreme.model.GPSLocation;
 
 public class GPSLocationControl {
 	
